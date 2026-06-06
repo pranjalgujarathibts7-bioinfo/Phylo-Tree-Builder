@@ -1,0 +1,9 @@
+species,Homo_sapiens,Pan_troglodytes,Equus_caballus,Bos_taurus,Gallus_gallus,Rana_pipiens,Thunnus_albacares,Triticum_aestivum
+Homo_sapiens,0,0.1,0.0875,0.075,0.0875,0.15,0.15,0.6625
+Pan_troglodytes,0.1,0,0.0625,0.05,0.075,0.1375,0.1375,0.6625
+Equus_caballus,0.0875,0.0625,0,0.0125,0.05,0.1125,0.125,0.675
+Bos_taurus,0.075,0.05,0.0125,0,0.0375,0.1,0.1125,0.6625
+Gallus_gallus,0.0875,0.075,0.05,0.0375,0,0.075,0.125,0.6625
+Rana_pipiens,0.15,0.1375,0.1125,0.1,0.075,0,0.15,0.675
+Thunnus_albacares,0.15,0.1375,0.125,0.1125,0.125,0.15,0,0.675
+Triticum_aestivum,0.6625,0.6625,0.675,0.6625,0.6625,0.675,0.675,0
