@@ -13,12 +13,25 @@ def main():
         default="outputs",
         help="Output directory for results (default: outputs)"
     )
+    parser.add_argument(
+        "--species",
+        nargs="+",
+        default=None,
+        help="List of species to analyze (default: built-in 8 species)"
+    )
+    parser.add_argument(
+        "--protein",
+        default="cytochrome c",
+        help="Protein to search for (default: cytochrome c)"
+    )
     args = parser.parse_args()
 
     print("*** Phylogenetic Tree Builder ***")
     print("=" * 40)
 
-    fasta_file = fetch_sequences(args.output)
+    fasta_file = fetch_sequences(args.output, args.species, args.protein)
+    if fasta_file is None:
+        return
     records = align_sequences(fasta_file)
     alignment = create_multiple_alignment(records)
     distance_matrix = calculate_distance_matrix(alignment, args.output)

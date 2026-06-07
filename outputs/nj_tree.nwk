@@ -1,1 +1,1 @@
-((Homo_sapiens:0.05469,((Bos_taurus:-0.00000,Equus_caballus:0.01250)Inner1:0.01250,Pan_troglodytes:0.03750)Inner4:0.00781)Inner5:0.00625,(Rana_pipiens:0.06000,Gallus_gallus:0.01500)Inner2:0.01563,(Triticum_aestivum:0.60234,Thunnus_albacares:0.07266)Inner3:0.01250)Inner6:0.00000;
+(Homo_sapiens:0.02188,(Bos_taurus:0.00937,Mus_musculus:0.09062)Inner1:0.01563,Equus_caballus:0.04062)Inner2:0.00000;

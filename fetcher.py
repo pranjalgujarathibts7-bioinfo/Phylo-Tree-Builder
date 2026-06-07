@@ -15,17 +15,19 @@ SPECIES = [
     "Triticum aestivum"
 ]
 
-def fetch_sequences(output_dir="outputs"):
+def fetch_sequences(output_dir="outputs", species_list=None, protein="cytochrome c"):
     os.makedirs(output_dir, exist_ok=True)
+    if species_list is None:
+        species_list = SPECIES
     output_file = os.path.join(output_dir, "sequences.fasta")
     records = []
 
-    for species in SPECIES:
+    for species in species_list:
         print(f"Fetching sequence for: {species}")
         try:
             search_handle = Entrez.esearch(
                 db="protein",
-                term=f"{species}[Organism] AND cytochrome c[Protein Name]",
+                term=f"{species}[Organism] AND {protein}[Protein Name]",
                 retmax=1
             )
             search_results = Entrez.read(search_handle)
@@ -50,10 +52,13 @@ def fetch_sequences(output_dir="outputs"):
         except Exception as e:
             print(f"  ✗ Failed for {species}: {e}")
 
+    if len(records) < 3:
+        print(f"\n✗ Only {len(records)} sequences fetched.")
+        print("Need at least 3 sequences to build a tree.")
+        print("Try different species names or a different protein name.")
+        return None
+
     SeqIO.write(records, output_file, "fasta")
     print(f"\n✓ All sequences saved to {output_file}")
     print(f"✓ Total sequences fetched: {len(records)}")
     return output_file
-
-if __name__ == "__main__":
-    fetch_sequences()
