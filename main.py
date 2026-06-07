@@ -36,7 +36,7 @@ def main():
     alignment = create_multiple_alignment(records)
     distance_matrix = calculate_distance_matrix(alignment, args.output)
     upgma_tree, nj_tree = build_trees(distance_matrix, args.output)
-    visualize_trees(upgma_tree, nj_tree, args.output)
+    visualize_trees(upgma_tree, nj_tree, args.output, args.protein)
     
     print("=" * 40)
     print("Pipeline complete!")

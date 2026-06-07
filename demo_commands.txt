@@ -1,0 +1,46 @@
+========================================
+PHYLO TREE BUILDER - DEMO COMMANDS
+========================================
+
+--- DEFAULT RUN ---
+python main.py
+
+--- CUSTOM OUTPUT FOLDER ---
+python main.py --output myresults
+
+--- PRIMATES ONLY ---
+python main.py --species "Homo sapiens" "Pan troglodytes" "Gorilla gorilla" "Pongo pygmaeus" "Macaca mulatta"
+
+--- MAMMALS ONLY ---
+python main.py --species "Homo sapiens" "Pan troglodytes" "Mus musculus" "Bos taurus" "Equus caballus" "Canis lupus familiaris"
+
+--- WIDE EVOLUTIONARY RANGE ---
+python main.py --species "Homo sapiens" "Gallus gallus" "Rana pipiens" "Thunnus albacares" "Triticum aestivum"
+
+--- HEMOGLOBIN ---
+python main.py --species "Homo sapiens" "Mus musculus" "Bos taurus" "Equus caballus" --protein "hemoglobin subunit alpha"
+
+--- INSULIN ---
+python main.py --species "Homo sapiens" "Mus musculus" "Bos taurus" "Sus scrofa" --protein "insulin"
+
+--- P53 TUMOR SUPPRESSOR ---
+python main.py --species "Homo sapiens" "Mus musculus" "Rattus norvegicus" "Bos taurus" --protein "tumor protein p53"
+
+--- MYOGLOBIN ---
+python main.py --species "Homo sapiens" "Bos taurus" "Equus caballus" "Physeter catodon" --protein "myoglobin"
+
+--- BEST FOR PROFESSOR DEMO ---
+python main.py --species "Homo sapiens" "Pan troglodytes" "Gorilla gorilla" "Mus musculus" "Bos taurus" --protein "cytochrome c" --output primate_results
+
+========================================
+SAFETY COMMANDS
+========================================
+
+--- CHECK BIOPYTHON ---
+python -c "import Bio; print(Bio.__version__)"
+
+--- CHECK PROJECT FILES ---
+ls
+
+--- RERUN DEFAULT IF CUSTOM FAILS ---
+python main.py

@@ -46,7 +46,7 @@ def build_trees(distance_matrix, output_dir="outputs"):
     return upgma_tree, nj_tree
 
 
-def visualize_trees(upgma_tree, nj_tree, output_dir="outputs"):
+def visualize_trees(upgma_tree, nj_tree, output_dir="outputs", protein="cytochrome c"):
     print("\nVisualizing trees...")
     matplotlib.use("Agg")
     
@@ -61,7 +61,8 @@ def visualize_trees(upgma_tree, nj_tree, output_dir="outputs"):
     plt.suptitle("Cytochrome C Phylogenetic Trees", fontsize=20, fontweight="bold")
     plt.tight_layout()
     
-    output_path = os.path.join(output_dir, "phylogenetic_trees.png")
+    protein_clean = protein.replace(" ", "_").replace("/", "_")
+    output_path = os.path.join(output_dir, f"phylogenetic_trees_{protein_clean}.png")
     plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
     
