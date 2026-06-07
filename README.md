@@ -47,7 +47,26 @@ pip install biopython matplotlib
 
 ## Usage
 
+Run with default settings (cytochrome c, 8 species):
 python main.py
+
+Custom species:
+python main.py --species "Homo sapiens" "Gorilla gorilla" "Pan troglodytes"
+
+Custom protein:
+python main.py --protein "hemoglobin subunit alpha"
+
+Custom output folder:
+python main.py --output myresults
+
+All combined:
+python main.py --species "Homo sapiens" "Mus musculus" "Bos taurus" --protein "hemoglobin subunit alpha" --output myresults
+
+## Arguments
+
+- --species: List of species scientific names (default: built-in 8 species)
+- --protein: Protein name to search on NCBI (default: cytochrome c)
+- --output: Output directory for results (default: outputs)
 
 ## Output
 
